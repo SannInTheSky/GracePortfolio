@@ -8,6 +8,10 @@
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"></script>
 
   <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
     .home-section 
     {
         position: relative;
@@ -19,6 +23,7 @@
         display: flex;
         align-items: center; 
     }
+
     .home-container 
     {
         background-color: rgba(255, 255, 255, 0.95);
@@ -41,40 +46,41 @@
     }
 
     .about-text-box h1 {
-      background-color:darkkhaki;
+      background-color: rgb(236, 225, 70);
       margin-bottom: 15px;
     }
 
-    body 
-    {
+    body {
       padding-top: 70px;
     }
-
   </style>
 </head>
+
 <body>
 
 <nav class="navbar navbar-expand-sm bg-white justify-content-center fixed-top shadow">
   <ul class="navbar-nav">
     <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
-    <li class="nav-item"><a class="nav-link" href="#">About Me</a></li>
-    <li class="nav-item"><a class="nav-link" href="#">Projects</a></li>
+    <li class="nav-item"><a class="nav-link" href="#about">About Me</a></li>
+    <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
   </ul>
 </nav>
 
- <div class="home-section">
+<div class="home-section">
   <div class="home-container row align-items-center">
     <div class="col-md-6">
       <h1>Sanny's Portfolio</h1>
       <p>Welcome to my Portfolio! I am Grace and through this portfolio you'll get to know more about me.</p>
+      <a href="#about" class="btn btn-outline-secondary">About Me →</a>
     </div>
     <div class="col-md-6 text-center">
       <img src="assets/sunflower.gif" class="img-fluid w-50">
     </div>
   </div>
- </div>
+</div>
 
- <div class="about-me py-5">
+<!-- ABOUT ME SECTION -->
+<div class="about-me py-5" id="about">
   <div class="container">
     <div class="row align-items-center">
       
@@ -83,19 +89,21 @@
       </div>
 
       <div class="col-md-6">
-        <div class ="about-text-box">
-        <h1>About Me</h1>
-        <p>
-          Hi! I'm Grace. I am just a simple girl who loves to anything. 
-          I am a Computer Science Student at Palawan State University.
-      </div>
+        <div class="about-text-box">
+          <h1>About Me</h1>
+          <p>
+            Hi! I'm Grace. I am just a simple girl who loves to do anything. 
+            I am a Computer Science Student at Palawan State University.
+          </p>
+        </div>
       </div>
 
     </div>
   </div>
 </div>
 
-<div class="container py-5">
+<!-- PROJECTS SECTION -->
+<div class="container py-5" id="projects">
   <h1 class="text-center mb-4">Projects</h1>
   <div class="row">
 
@@ -121,5 +129,6 @@
 
   </div>
 </div>
+
 </body>
 </html>
