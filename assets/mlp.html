@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Little Pony</title>
+        <style>
+            @font-face {
+                font-family: 'league';
+                src: url('LeagueSpartan-Bold.otf') format('opentype');
+                font-display: swap;
+            }
+
+            @font-face {
+                font-family: 'montserrat';
+                src: url('Montserrat-Regular.otf') format('opentype');
+                font-display: swap;
+            }
+
+            * {
+                margin: 0;
+                padding: 0;
+                box-sizing: border-box;
+            }
+
+            body {
+                font-family: montserrat;
+                background-color: #fff5f5;
+            }
+
+            h1 {
+                font-family: 'league';
+                color: #dd2076;
+                background-color: white;
+                border-radius: 30px;
+                padding: 10px 25%;
+                width: fit-content;
+                margin: 0 auto;     
+            }
+
+            h2 {
+                background: #dd2076;
+                color: white;
+                width: fit-content;
+                padding: 12px 25px;
+                border-radius: 30px;
+                font-family: league;
+                margin-bottom: 35px;
+                margin-top: 20px;
+            }
+
+            h3 {
+                font-family: 'league';
+                color: #ef6b6b;
+                margin: 15px 0;
+            }
+
+            .home {
+                background: url("mlp.jpg") no-repeat center center;
+                background-size: cover; 
+                height: 100vh;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+            }
+
+            .home h1 {
+                margin-top: 20px;
+            }
+
+            .about h1 {
+                margin-top: 20px;
+            }
+
+            nav {
+                font-family: montserrat;
+                background-color: white;
+                border-radius: 30px;
+                padding: 10px 20px;
+                width: fit-content;
+                position: fixed;         
+                top: 100px;
+                left: 50%;
+                transform: translateX(-50%);
+                z-index: 9999;            
+            }
+
+            nav a {
+                color: #ef6b6b; 
+                text-decoration: none; 
+                margin: 0 15px; 
+                font-weight: bold;
+            }
+
+            .logo-home {
+                position: absolute;
+                top: 20px;
+                left: 60px;
+                width: 130px; 
+            }
+
+            .bottom-btn {
+                position: absolute;
+                bottom: 40px;
+                left: 50%;
+                transform: translateX(-50%);
+                background-color: #dd2076;
+                color: white;
+                border: none;
+                padding: 12px 30px;
+                border-radius: 25px;
+                font-size: 16px;
+                cursor: pointer;
+            }
+
+            .about {
+                background-color: #ffd1d1;
+                min-height: 100vh;
+                padding: 50px 80px;
+            }
+
+            .about h1 {
+                margin-bottom: 50px;
+            }
+
+            .about-table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 60px 0;
+            }
+
+            .about-table td {
+                vertical-align: top;
+                width: 50%;
+            }
+
+            .logo-about {
+                width: 400px;
+                display: block;
+                margin-bottom: 5px;
+            }
+
+
+            .about-text {
+                color: #dd2076;
+                font-size: 25px;
+                font-family: league;
+                line-height: 1.4;
+            }
+
+            .socials {
+                font-family: league;
+                color: #dd2076;
+                font-size: 40px;
+                margin-bottom: 15px;
+                margin-top: 30px; 
+            }
+
+            .socials-box {
+                background: #dd2076;
+                border-radius: 30px;
+                padding: 20px 30px;
+                width: 320px;
+                margin-bottom: 20px;
+            }
+
+            .socials-box ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .socials-box a {
+                color: white;
+                text-decoration: none;
+            }
+
+            .socials-box li {
+                color: white;
+                font-family: league;
+                font-size: 18px;
+                margin: 10px 8px 0;
+                padding: 5px 0;
+            }
+            
+            .ponies-img {
+                margin-top: 20px;
+                width: 100%;
+                max-width: 590px;
+                height: auto;
+            }
+
+            .faves {
+                background-color: #ffd1d1;
+                min-height: 100vh;
+                padding: 50px 80px;
+            }
+
+            .faves h1 {
+                margin-bottom: 60px;
+            }
+
+            .faves-table {
+                width: 100%;
+                border-collapse: separate;
+                border-spacing: 80px 0;
+            }
+
+            .faves-table td {
+                vertical-align: top;
+                width: 50%;
+            }
+
+            .faves-box ol {
+                margin-left: 20px;
+            }
+
+            .faves-box li {
+                color: #dd2076;
+                font-family: league;
+                font-size: 22px;
+                margin: 10px 0;
+            }
+
+            .faves-text {
+                color: #dd2076;
+                font-family: league;
+                font-size: 22px;
+                max-width: 520px;
+                line-height: 1.4;
+            }
+
+            .content-section {
+                background-color: #ffeded;
+                padding: 40px 80px;
+                margin: 20px 0;
+            }
+
+            .content-table {
+                width: 100%;
+                border-collapse: collapse;
+                margin: 30px 0;
+                background-color: white;
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            }
+
+            .content-table th {
+                background-color: #dd2076;
+                color: white;
+                padding: 15px;
+                font-family: league;
+                font-size: 20px;
+                text-align: left;
+            }
+
+            .content-table td {
+                padding: 15px;
+                border-bottom: 1px solid #ffd1d1;
+                font-size: 18px;
+            }
+
+            .watch-list {
+                background-color: white;
+                padding: 20px;
+                border-radius: 15px;
+                margin: 20px 0;
+            }
+
+            .watch-list h3 {
+                color: #dd2076;
+                margin-bottom: 15px;
+            }
+
+            .watch-list ul {
+                margin-left: 20px;
+            }
+
+            .watch-list li {
+                color: #dd2076;
+                font-size: 18px;
+                margin: 8px 0;
+                font-family: montserrat;
+            }
+
+            .footer {
+                background-color: #dd2076;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                font-family: montserrat;
+                margin-top: 40px;
+            }
+
+            .footer a {
+                color: #ffd1d1;
+                text-decoration: none;
+                font-weight: bold;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div class="home" id="home">
+            <h1>HOME</h1>
+            <nav>
+                <a href="#home">home</a>
+                <a href="#about">about</a>
+                <a href="#faves">faves</a>
+                <a href="#content">content</a>
+            </nav>
+            <img src="logo.png" alt="My Little Pony Logo" class="logo-home">
+            <a href="#about"><button class="bottom-btn">find out more →</button></a>
+        </div>
+
+        <div class="about" id="about">
+            <h1>ABOUT</h1>
+            <table class="about-table">
+                <tr>
+                    <td class="about-left">
+                        <img src="logo.png" alt="My Little Pony Logo" class="logo-about">
+                        <h2 class="welcome">Welcome to Equestria!</h2>
+                        <p class="about-text">
+                            My Little Pony Friendship is Magic is an animated series based on Hasbro's popular My Little Pony franchise. This incarnation is referred to as the fourth generation, or G4, of My Little Pony. The show was developed for television by Lauren Faust.
+                        </p>
+                    </td>
+                    <td class="about-right">
+                        <div class="socials">SOCIALS</div>
+                        <div class="socials-box">
+                            <ul>
+                                <li><a href="https://www.instagram.com/mylittlepony/">INSTAGRAM</a></li>
+                                <li><a href="https://www.facebook.com/mylittlepony/">FACEBOOK</a></li>
+                                <li><a href="https://x.com/MyLittlePony?lang=en">X (TWITTER)</a></li>
+                            </ul>
+                        </div>
+                        <p class="about-text">
+                            Dive into the realm of Equestria and get to know more about the characters as well as their story. You can follow them through their socials and meet the other ponies!
+                        </p>
+                        <img src="ponies.jpg" alt="My Little Pony Characters" class="ponies-img">
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="faves" id="faves">
+            <h1>FAVES</h1>
+            <table class="faves-table">
+                <tr>
+                    <td>
+                        <div class="faves-box">
+                            <h2>Favorite Songs</h2>
+                            <ol>
+                                <li>This Day Aria</li>
+                                <li>Welcome to the Show</li>
+                                <li>Equestria Girls</li>
+                            </ol>
+                        </div>
+                        <div class="faves-box">
+                            <h2>Favorite Characters</h2>
+                            <ol>
+                                <li>Princess Cadance</li>
+                                <li>Fluttershy</li>
+                                <li>Pinkie Pie</li>
+                            </ol>
+                        </div>
+                    </td>
+                    <td>
+                        <p class="faves-text">
+                            These are just my personal favorite ponies from the magical world of My Little Pony! I highly recommend diving into the actual episodes, films, and movies to truly experience the rich storytelling and wonderful lessons about friendship, kindness, and adventure. Each season unfolds new mysteries, introduces captivating characters, and expands the beautiful lore of Equestria.
+                            <br><br>
+                            You'll discover enchanted locations and witness how friendship truly is magic. So grab some popcorn, settle in, and let the magic of My Little Pony transport you to a world of wonder!
+                        </p>
+                    </td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="content-section" id="content">
+            <h1>CONTENT GUIDE</h1>
+            
+            <h2>Watch Order & Information</h2>
+            
+            <table class="content-table">
+                <tr>
+                    <th>Series/Film</th>
+                    <th>Type</th>
+                    <th>Recommended Order</th>
+                </tr>
+                <tr>
+                    <td>Friendship is Magic (Season 1-3)</td>
+                    <td>TV Series</td>
+                    <td>Start Here</td>
+                </tr>
+                <tr>
+                    <td>Equestria Girls</td>
+                    <td>Film Series</td>
+                    <td>After Season 3</td>
+                </tr>
+                <tr>
+                    <td>Friendship is Magic (Season 4-9)</td>
+                    <td>TV Series</td>
+                    <td>Continue Main Series</td>
+                </tr>
+                <tr>
+                    <td>My Little Pony: The Movie (2017)</td>
+                    <td>Feature Film</td>
+                    <td>After Season 7</td>
+                </tr>
+            </table>
+
+            <div class="watch-list">
+                <h3>Essential Episodes to Start With:</h3>
+                <ul>
+                    <li>Friendship is Magic (Parts 1 & 2) - Season 1, Episodes 1-2</li>
+                    <li>The Cutie Map (Parts 1 & 2) - Season 5, Episodes 1-2</li>
+                    <li>The Best Night Ever - Season 1, Episode 26</li>
+                    <li>A Canterlot Wedding (Parts 1 & 2) - Season 2, Episodes 25-26</li>
+                </ul>
+            </div>
+            
+
+        <div class="footer">
+            <p>My Little Pony (Created by Grace Cornel hehe)</p>
+            <p>Follow the official accounts: <a href="https://www.instagram.com/mylittlepony/">Instagram</a> | <a href="https://www.facebook.com/mylittlepony/">Facebook</a> | <a href="https://x.com/MyLittlePony?lang=en">Twitter/X</a></p>
+            <p><a href="#home">Back to Top</a></p>
+        </div>
+    </body>
+</html>

@@ -12,27 +12,28 @@
       scroll-behavior: smooth;
     }
 
-    .home-section 
-    {
-        position: relative;
-        width: 100%;
-        min-height: auto; 
-        padding: 40px 0;   
-        background: url("assets/bg.gif") no-repeat center center;
-        background-size: cover;
-        display: flex;
-        align-items: center; 
+    body {
+      padding-top: 70px;
     }
 
-    .home-container 
-    {
-        background-color: rgba(255, 255, 255, 0.95);
-        border-radius: 10px;
-        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
-        padding: 20px;       
-        width: 90%;
-        max-width: 1200px;
-        margin: 0 auto;
+    .home-section {
+      position: relative;
+      width: 100%;
+      padding: 40px 0;
+      background: url("assets/bg.gif") no-repeat center center;
+      background-size: cover;
+      display: flex;
+      align-items: center;
+    }
+
+    .home-container {
+      background-color: rgba(255, 255, 255, 0.95);
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+      padding: 20px;
+      width: 90%;
+      max-width: 1200px;
+      margin: 0 auto;
     }
 
     h1 {
@@ -45,18 +46,40 @@
       }
     }
 
+    .about-me {
+      background: url("assets/paper.png") no-repeat center center;
+      background-size: cover;
+    }
+
+    .about-text-box {
+      background-color: rgba(255, 255, 255, 0.9);
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      height: 100%;
+      text-align: center;
+    }
+
     .about-text-box h1 {
       background-color: rgb(236, 225, 70);
       margin-bottom: 15px;
+      padding: 10px;
+      width: 100%;
+      display: block;
+      text-align: center;
+      border-radius: 5px;
     }
 
-    body {
-      padding-top: 70px;
+    .skills-list {
+      list-style: none;
+      padding: 0;
     }
 
-    .about-me {
-    background: url("assets/paper.png") no-repeat center center;
-    background-size: cover;
+    .skills-list li {
+      background-color: rgba(236, 225, 70, 0.8);
+      margin-bottom: 10px;
+      padding: 10px;
+      border-radius: 10px;
     }
 
     .footer {
@@ -64,26 +87,13 @@
       box-shadow: 0 -3px 10px rgba(0,0,0,0.1);
     }
 
-.   footer a {
+    .footer a {
       color: #555;
     }
 
-.   footer a:hover {
+    .footer a:hover {
       color: #000;
     }
-
-    .skills-list {
-  list-style: none;
-  padding: 0;
-}
-
-.skills-list li {
-  background-color: rgba(236, 225, 70, 0.8);
-  margin-bottom: 10px;
-  padding: 10px;
-  border-radius: 10px;
-  text-align: center;
-}
   </style>
 </head>
 
@@ -101,9 +111,10 @@
   <div class="home-container row align-items-center">
     <div class="col-md-6">
       <h1>Sanny's Portfolio</h1>
-      <p>Hi! I'm Grace, a Computer Science student passionate about creating simple and 
-        functional web experiences.  
-        Welcome to my portfolio where I showcase my projects and skills.</p>
+      <p>
+        Hi! I'm Grace, a Computer Science student passionate about creating simple and 
+        functional web experiences. Welcome to my portfolio where I showcase my projects and skills.
+      </p>
       <a href="#about" class="btn btn-outline-secondary">About Me →</a>
     </div>
     <div class="col-md-6 text-center">
@@ -116,12 +127,10 @@
   <div class="container">
     <div class="row align-items-center text-center text-md-start">
 
-      <!-- LEFT: IMAGE -->
       <div class="col-md-4 mb-4 mb-md-0 text-center">
         <img src="assets/me.png" class="img-fluid w-75">
       </div>
 
-      <!-- CENTER: ABOUT ME (keeps your design) -->
       <div class="col-md-4 mb-4 mb-md-0">
         <div class="about-text-box">
           <h1>About Me</h1>
@@ -132,34 +141,40 @@
         </div>
       </div>
 
-<!-- RIGHT: SKILLS -->
-<div class="col-md-4">
-  <div class="about-text-box">
-    <h1>Skills</h1>
-    <ul class="skills-list">
-      <li>HTML & CSS</li>
-      <li>Bootstrap</li>
-      <li>C Programming</li>
-      <li>Basic JavaScript</li>
-      <li>Responsive Web Design</li>
-    </ul>
+      <div class="col-md-4">
+        <div class="about-text-box">
+          <h1>Skills</h1>
+          <ul class="skills-list">
+            <li>HTML & CSS</li>
+            <li>Bootstrap</li>
+            <li>C Programming</li>
+            <li>Basic JavaScript</li>
+            <li>Responsive Web Design</li>
+          </ul>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
 
-<!-- PROJECTS SECTION -->
 <div class="container py-5" id="projects">
   <h1 class="text-center mb-4">Projects</h1>
   <div class="row">
 
     <div class="col-md-4 mb-4">
-      <div class="card h-100 shadow">
-        <img src="assets/project1.png" class="card-img-top">
-        <div class="card-body">
-          <h5 class="card-title">Favorite Show</h5>
-          <p class="card-text">An online voting system for university elections.</p>
-        </div>
+  <a href="assets/mlp.html" class="text-decoration-none text-dark">
+    <div class="card h-100 shadow">
+      <img src="assets/project1.png" class="card-img-top">
+      <div class="card-body">
+        <h5 class="card-title">My Little Pony Website</h5>
+        <p class="card-text">
+          A themed website inspired by My Little Pony, showcasing design and layout creativity.
+        </p>
       </div>
     </div>
+  </a>
+</div>
 
     <div class="col-md-4 mb-4">
       <div class="card h-100 shadow">
@@ -179,9 +194,10 @@
     <p class="mb-1">Created by Grace Cornel | Portfolio</p>
     <p class="mb-0">
       <a href="https://www.facebook.com/cornickue" class="text-decoration-none mx-2">Facebook</a> |
-      <a href="https://www.instagram.com/sann.inthesky/" class="text-decoration-none mx-2">Instagram</a> 
+      <a href="https://www.instagram.com/sann.inthesky/" class="text-decoration-none mx-2">Instagram</a>
     </p>
   </div>
 </footer>
+
 </body>
 </html>
