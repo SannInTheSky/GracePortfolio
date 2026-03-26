@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title> Student Registration Form </title>
+        <style>
+            body {
+                background-color: #ffe4ec;
+                font-family: Arial, sans-serif;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                min-height: 100vh;
+                margin: 0;
+                padding: 20px;
+            }
+
+            .form {
+                background-color: white;
+                padding: 30px;
+                border-radius: 15px;
+                box-shadow: 0 4px 10px rgba(89, 10, 50, 0.2);
+                width: 100%;
+                max-width: 400px;
+                border: 2px solid #ffb6c1;
+            }
+
+            h1 {
+                color: #ff69b4;
+                text-align: center;
+                margin-bottom: 25px;
+                font-size: 24px;
+            }
+
+            label {
+                color: #d45d92;
+                font-weight: 500;
+                display: block;
+                margin-top: 12px;
+                margin-bottom: 5px;
+            }
+
+            input[type="text"],
+            input[type="email"],
+            input[type="date"] {
+                width: 100%;
+                padding: 10px;
+                border: 2px solid #ffb6c1;
+                border-radius: 8px;
+                font-size: 14px;
+                box-sizing: border-box;
+            }
+
+            input[type="text"]:focus,
+            input[type="email"]:focus,
+            input[type="date"]:focus {
+                border-color: #ff69b4;
+                outline: none;
+            }
+
+            input[type="radio"] {
+                margin: 10px 5px 10px 0;
+                accent-color: #ff69b4;
+            }
+
+            input[type="radio"] + label {
+                display: inline-block;
+                margin: 0;
+                font-weight: normal;
+            }
+
+            input[type="submit"] {
+                background-color: #ff69b4;
+                color: white;
+                border: none;
+                border-radius: 8px;
+                padding: 12px 25px;
+                font-size: 16px;
+                font-weight: bold;
+                cursor: pointer;
+                width: 100%;
+                margin-top: 20px;
+            }
+
+            input[type="submit"]:hover {
+                background-color: #ff4d9e;
+            }
+
+            .radio-group {
+                background-color: #fff0f5;
+                padding: 10px;
+                border-radius: 8px;
+                margin: 10px 0;
+            }
+        </style>
+    </head>
+    <body>
+        <div class = "form">
+            <h1>Student Registration Form</h1>
+            <form id="registrationForm" onsubmit="return false;">
+                <label for = "name">Name:</label>
+                <input type = "text" id="name" name="name"><br>
+                
+                <label for = "email">Email:</label>
+                <input type = "email" id="email" name="email"><br>
+                
+                <label for = "date">Date:</label>
+                <input type = "date" id="date" name="date"><br>
+
+                <div class="radio-group">
+                    <label>Year Level:</label><br>
+                    <input type = "radio" id="year1" name="yearLevel" value="firstYear">
+                    <label for = "year1">First Year</label><br>
+                    
+                    <input type = "radio" id="year2" name="yearLevel" value="secYear">
+                    <label for = "year2">Second Year</label><br>
+                    
+                    <input type = "radio" id="year3" name="yearLevel" value="thirdYear">
+                    <label for = "year3">Third Year</label><br>
+                    
+                    <input type = "radio" id="year4" name="yearLevel" value="fourthYear">
+                    <label for = "year4">Fourth Year</label><br>
+                </div>
+                
+                <input type = "submit" value ="Submit" onclick="validateForm()">
+            </form>
+        </div>
+
+        <script>
+            document.getElementById("registrationForm").addEventListener("submit", function(event) {
+            let name = document.getElementById('name').value.trim();
+            let email = document.getElementById('email').value.trim();
+            let date = document.getElementById('date').value;
+    
+            let yearSelected = false;
+            let yearRadios = document.getElementsByName('yearLevel');
+            for(let i = 0; i < yearRadios.length; i++) {
+                if(yearRadios[i].checked) {
+                yearSelected = true;
+                break;
+                }
+            }
+
+            if(name === '' || email === '' || date === '' || !yearSelected) {
+                alert('Please fill in all fields!');
+                event.preventDefault(); 
+                } else {
+                alert('Registration submitted successfully!');
+            }
+            });
+</script>
+    </body>
+</html>
